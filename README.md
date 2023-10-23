@@ -14,7 +14,4 @@ Connect with me if you want those private codes.
 
 ## Screenshot
 
-![ss1 (1)](https://github.com/iAnkit53/jewelry_3d_ecom_public/assets/19521300/f3f20d89-0b8b-4c02-92a9-30c18930862a)
-![ss1 (2)](https://github.com/iAnkit53/jewelry_3d_ecom_public/assets/19521300/d5b08f05-9903-473f-b9bf-f70987536f5d)
-![ss1 (3)](https://github.com/iAnkit53/jewelry_3d_ecom_public/assets/19521300/0aaf4f89-bfb6-4519-a7e9-c3fea9390cac)
-
+![Screenshot2_git](https://github.com/iAnkit53/jewelry_3d_ecom_public/assets/19521300/9ff30324-df99-4780-b6d2-356bfce77db3)  ![Screenshot3_git](https://github.com/iAnkit53/jewelry_3d_ecom_public/assets/19521300/8f59b361-9141-4ea2-a86f-4fecaff04b21)  ![Screenshot1_git](https://github.com/iAnkit53/jewelry_3d_ecom_public/assets/19521300/a0d1e7c4-4d33-4b50-82ee-298dfb741c3b)
