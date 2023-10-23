@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jewelry_3d_ecom_public/core/colors_ui.dart';
 import 'package:jewelry_3d_ecom_public/core/strings.dart';
-import 'package:jewelry_3d_ecom_public/ui_samples.dart';
+// import 'package:jewelry_3d_ecom_public/ui_samples.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green).copyWith(
-            // background: Color(ColorsUI.bg_grey)),
-            // background: Colors.white),
+          // background: Color(ColorsUI.bg_grey)),
+          // background: Colors.white),
             background: Colors.lightGreen),
       ),
       home: const MyHomePage(title: StringsUI.appBarName),
@@ -43,7 +43,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String model_ref = '';
+  String model_ref = 'assets/png/26_1silver.png';
+  String selectedColor = '';
 
   @override
   Widget build(BuildContext context) {
@@ -86,16 +87,40 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Visibility(
                     visible: true,
                     child: Image.asset(
-                      // 'assets/png/26_1gold.png',
-                      // 'assets/png/26_1rose.png',
-                      'assets/png/26_1silver.png',
+                      model_ref,// ?? 'assets/png/26_1silver.png',
                     ),
                   ),),
                 Card(
                   margin: EdgeInsets.all(16.0),
                   child: Column(
                     children: [
-                      MyInnerCard(StringsUI.label1),
+                      MyInnerLabel(StringsUI.label1),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          ColorSphere(
+                            color: Color(ColorsUI.gold),
+                            isSelected: selectedColor == 'Gold',
+                            onSelected: () {
+                              setSelectedColor('Gold');
+                            },
+                          ),
+                          ColorSphere(
+                            color: Color(ColorsUI.silver),
+                            isSelected: selectedColor == 'Silver',
+                            onSelected: () {
+                              setSelectedColor('Silver');
+                            },
+                          ),
+                          ColorSphere(
+                            color: Colors.pinkAccent,
+                            isSelected: selectedColor == 'Rose Gold',
+                            onSelected: () {
+                              setSelectedColor('Rose Gold');
+                            },
+                          ),
+                        ],
+                      ),
                       MyInnerCardSoon(StringsUI.label2),
                       MyInnerCardSoon(StringsUI.label3),
                       SizedBox(
@@ -125,12 +150,25 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
+  void setSelectedColor(String color) {
+    setState(() {
+      selectedColor = color;
+      if(color =='Rose Gold'){
+        model_ref = 'assets/png/26_1rose.png';
+      } else if(color =='Gold'){
+        model_ref = 'assets/png/26_1gold.png';
+      } else{
+        model_ref = 'assets/png/26_1silver.png';
+      }
+    });
+  }
 }
 
-class MyInnerCard extends StatelessWidget {
+class MyInnerLabel extends StatelessWidget {
   final String label;
 
-  MyInnerCard(this.label);
+  MyInnerLabel(this.label);
 
   @override
   Widget build(BuildContext context) {
@@ -144,14 +182,6 @@ class MyInnerCard extends StatelessWidget {
               fontSize: 18,
             ),
           ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            CircleIconSelector(ColorsUI.gold),
-            CircleIconSelector(ColorsUI.roseGold),
-            CircleIconSelector(ColorsUI.silver),
-          ],
         ),
       ],
     );
@@ -179,9 +209,9 @@ class MyInnerCardSoon extends StatelessWidget {
         Text(
           StringsUI.comingSoon,
           style: TextStyle(
-          fontFamily: 'Curly',
-          fontSize: 18,
-        ),),
+            fontFamily: 'Curly',
+            fontSize: 18,
+          ),),
       ],
     );
   }
@@ -200,6 +230,39 @@ class CircleIconSelector extends StatelessWidget {
       child: Icon(
         Icons.check,
         color: Colors.white,
+      ),
+    );
+  }
+}
+
+class ColorSphere extends StatelessWidget {
+  final Color color;
+  final bool isSelected;
+  final VoidCallback onSelected;
+
+  ColorSphere({
+    required this.color,
+    required this.isSelected,
+    required this.onSelected,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onSelected,
+      child: Container(
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: color,
+          border: isSelected
+              ? Border.all(
+            color: Colors.green,
+            width: 2.0,
+          )
+              : null,
+        ),
       ),
     );
   }
