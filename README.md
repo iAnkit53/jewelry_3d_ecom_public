@@ -12,6 +12,12 @@ As this project is in progress, some parts of this might require unity_integrati
 I will be posting and updating screenshots and videos here, but some code will be in this public git, other important codes will be in my private git. 
 Connect with me if you want those private codes.
 
-## Screenshot
+## Screenshots and Video
 
-![Screenshot2_git](https://github.com/iAnkit53/jewelry_3d_ecom_public/assets/19521300/9ff30324-df99-4780-b6d2-356bfce77db3)  ![Screenshot3_git](https://github.com/iAnkit53/jewelry_3d_ecom_public/assets/19521300/8f59b361-9141-4ea2-a86f-4fecaff04b21)  ![Screenshot1_git](https://github.com/iAnkit53/jewelry_3d_ecom_public/assets/19521300/a0d1e7c4-4d33-4b50-82ee-298dfb741c3b)
+
+
+https://github.com/iAnkit53/jewelry_3d_ecom_public/assets/19521300/84531e46-3096-4ec1-a950-bdf8348d45f5
+
+
+
+
